@@ -1,18 +1,24 @@
-//WAP to subtract two integers without using Minus (-) operator. (Hint Bitwise operator)
+//WAP to find who scored first “99” in an array marks.
 
 #include <stdio.h>
 
-int subtract(int a, int b) {
-    while (b != 0) {
-        int borrow = (~a) & b;
-        a = a ^ b;
-        b = borrow << 1;
+int main(){
+    int marks[5];
+    printf("Enter 5 marks : ");
+    for (int  i = 0; i < 5; i++)
+    {
+        scanf("%d", &marks[i]);
     }
-    return a;
-}
-
-int main() {
-    int num1 = 15, num2 = 10;
-    printf("Result: %d\n", subtract(num1, num2));
+    for (int i = 0; i < 5; i++)
+    {
+        if (marks[i]==99)
+        {
+            printf("%d", marks[i]);
+            break;
+        }
+        
+    }
+    
+    
     return 0;
 }

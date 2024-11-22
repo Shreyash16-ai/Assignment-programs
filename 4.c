@@ -1,38 +1,25 @@
-// WAP to accept two integer numbers and swap them using 4 different methods in C language.
+//WAP to find Who & how many students have scored 99 in an array Marks.
 
 #include <stdio.h>
-void method1(int a, int b)
-{
-    b = a + b;
-    a = b - a;
-    b = b - a;
-    printf("%d %d", a, b);
-}
-void method2(int a, int b)
-{
-    int temp;
-    temp = a;
-    a = b;
-    b = temp;
-    printf("%d %d", a, b);
-}
-void method3(int *a, int *b)
-{
-    *b = *b + *a;
-    *a = *b - *a;
-    *b = *b - *a;
-    printf("%d %d", *a, *b);
-}
-int main()
-{
-    int x, y, temp;
-    printf("Enter 2 numbers : ");
-    scanf("%d %d", &x, &y);
-    printf("%d %d\n", x, y);
 
-    // method1(x, y);
-    // method2(x, y);
-    // method3(&x, &y);
+int main(){
+    int n=0,marks[5];
+    printf("Enter 5 marks : ");
+    for (int  i = 0; i < 5; i++)
+    {
+        scanf("%d", &marks[i]);
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        if (marks[i]==99)
+        {
+            n++;
+            printf("%d\n%d", marks[i], n);
 
+        }
+        
+    }
+    
+    
     return 0;
 }

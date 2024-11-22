@@ -1,35 +1,33 @@
-//WAP to print Pascal’s Triangle.
+// Wap to count prime numbers in an array.
 
 #include <stdio.h>
 
-int factorial(int n) {
-    int result = 1;
-    for (int i = 1; i <= n; i++) {
-        result *= i;
+int main()
+{
+    int arr[5], n, count = 0;
+    printf("Enter 5 elements :");
+    for (int i = 0; i < 5; i++)
+    {
+        scanf("%d", &arr[i]);
     }
-    return result;
-}
-
-int combination(int n, int r) {
-    return factorial(n) / (factorial(r) * factorial(n - r));
-}
-
-void printPascalsTriangle(int rows) {
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < rows - i - 1; j++) {
-            printf(" ");
+    for (int i = 0; i < 5; i++)
+    {
+        n = arr[i];
+        int f = 0;
+        for (int j = 2; j < n; j++)
+        {
+            if (n % j == 0)
+            {
+                f = 1;
+                break;
+            }
+            if (f == 0)
+            {
+                count++;
+            }
         }
-        for (int k = 0; k <= i; k++) {
-            printf("%d ", combination(i, k));
-        }
-        printf("\n");
     }
-}
+    printf("%d", count);
 
-int main() {
-    int rows;
-    printf("Enter the number of rows: ");
-    scanf("%d", &rows);
-    printPascalsTriangle(rows);
     return 0;
 }

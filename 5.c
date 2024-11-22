@@ -1,6 +1,7 @@
-// WAP to find average score of the Marks array.
+// WAP to find sum of all scores in Marks array.
 
 #include <stdio.h>
+
 int main()
 {
     int sum = 0, marks[5];
@@ -13,7 +14,7 @@ int main()
     {
         sum += marks[i];
     }
-    printf("%d", sum / 5);
+    printf("%d", sum);
 
     return 0;
 }

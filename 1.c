@@ -1,33 +1,16 @@
-//WAP to check whether a given is Armstrong or not.
+// WAP to increase every student mark by 5 & then print the updated array.
 
 #include <stdio.h>
-int amstrong(int n)
-{
-    if (n == 0)
-    {
-        return 0;
-    }
-    else
-    {
-        int rem = n % 10;
-        return (rem * rem * rem) + amstrong(n / 10);
-    }
-}
+
 int main()
 {
+    int marks[5] = {1, 2, 3, 4, 5};
 
-    int n;
-    printf("Enter a number : ");
-    scanf("%d", &n);
-    int arm = amstrong(n);
-    if (n == arm)
+    for (int i = 0; i < 5; i++)
     {
-        printf("Amstrong Number");
-    }
+        marks[i] += 5;
 
-    else
-    {
-        printf("Not Amstrong Number");
+        printf("%d ", marks[i]);
     }
     return 0;
 }

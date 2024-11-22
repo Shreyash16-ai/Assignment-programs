@@ -1,32 +1,27 @@
-/*WAP to print below mentioned pattern:
-1
-01
-101
-0101
-10101*/
+// WAP to find maximum & minimum score in the Marks array.
 
 #include <stdio.h>
-
 int main()
 {
-    int n;
-    printf("Enter how many lines do you want ");
-    scanf("%d", &n);
-    for (int i = 1; i <= n; i++)
+    int marks[5];
+    printf("Enter 5 marks : ");
+    for (int i = 0; i < 5; i++)
     {
-        for (int j = 1; j <= i; j++)
-        {
-            if ((j + i) % 2 == 0)
-            {
-                printf("1");
-            }
-            else
-            {
-                printf("0");
-            }
-        }
-        printf("\n");
+        scanf("%d", &marks[i]);
     }
+    int max = marks[0], min = marks[0];
+    for (int i = 0; i < 5; i++)
+    {
+        if (marks[i] > max)
+        {
+            max = marks[i];
+        }
+        if (marks[i] < min)
+        {
+            min = marks[i];
+        }
+    }
+    printf("%d \n%d", max, min);
 
     return 0;
 }
